@@ -4,4 +4,4 @@ COPY ["./root", "/root"]
 RUN apk update && apk upgrade
 RUN apk add openrc openssh-server
 RUN openrc boot && rc-update add sshd
-ENTRYPOINT service sshd start
+ENTRYPOINT [ "service", "sshd", "start" ]
