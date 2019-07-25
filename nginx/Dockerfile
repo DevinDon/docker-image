@@ -3,4 +3,4 @@ WORKDIR /app
 COPY ["./etc", "/etc"]
 RUN apt update && apt upgrade -y
 COPY ["./app", "."]
-CMD sh /etc/daemon.sh
+ENTRYPOINT sh /etc/daemon.sh
