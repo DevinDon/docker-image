@@ -1,3 +1,3 @@
 # Alpine
 
-Alpine with OpenSSH.
+Alpine with Aliyun mirror.
