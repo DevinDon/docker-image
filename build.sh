@@ -1,5 +1,14 @@
-cd alpine && sh build.sh && \
-cd ../gcc && sh build.sh && \
-cd ../nginx && sh build.sh && \
-cd ../node && sh build.sh && \
-cd ../rust && sh build.sh
+platform=`uname -i`
+arch="amd64"
+
+if [ platform = "x86_64" ]
+then
+  arch="amd64"
+fi
+
+cd alpine && sh build.sh $arch && \
+cd ../gcc && sh build.sh $arch && \
+cd ../nginx && sh build.sh $arch && \
+cd ../node && sh build.sh $arch && \
+cd ../rust && sh build.sh $arch && \
+cd .. && sh manifest.sh

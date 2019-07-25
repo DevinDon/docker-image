@@ -1,8 +1,8 @@
-docker manifest create -a iinfinity/alpine iinfinity/alpine:amd64
-docker manifest create -a iinfinity/gcc iinfinity/gcc:amd64
-docker manifest create -a iinfinity/nginx iinfinity/nginx:amd64
-docker manifest create -a iinfinity/node iinfinity/node:amd64
-docker manifest create -a iinfinity/rust iinfinity/rust:amd64
+docker manifest create -a iinfinity/alpine iinfinity/alpine:$1
+docker manifest create -a iinfinity/gcc iinfinity/gcc:$1
+docker manifest create -a iinfinity/nginx iinfinity/nginx:$1
+docker manifest create -a iinfinity/node iinfinity/node:$1
+docker manifest create -a iinfinity/rust iinfinity/rust:$1
 
 docker manifest push iinfinity/alpine
 docker manifest push iinfinity/gcc
