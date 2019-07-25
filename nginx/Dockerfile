@@ -1,6 +1,6 @@
-FROM nginx
+FROM iinfinity/alpine
+RUN apk add nginx
 WORKDIR /app
 COPY ["./etc", "/etc"]
-RUN apt update && apt upgrade -y
 COPY ["./app", "."]
 ENTRYPOINT sh /etc/daemon.sh
