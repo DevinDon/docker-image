@@ -1,3 +1,5 @@
+rm -rf ~/.docker/manifests/*
+
 docker manifest create iinfinity/alpine iinfinity/alpine:$1
 docker manifest create iinfinity/centos iinfinity/centos:$1
 docker manifest create iinfinity/gcc iinfinity/gcc:$1
