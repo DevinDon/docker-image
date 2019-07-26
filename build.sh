@@ -14,4 +14,4 @@ cd ../nginx && sh build.sh $arch && \
 cd ../node && sh build.sh $arch && \
 cd ../python && sh build.sh $arch && \
 cd ../rust && sh build.sh $arch && \
-cd .. && sh manifest.sh
+cd .. && sh manifest.sh $arch
