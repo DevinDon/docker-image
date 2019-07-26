@@ -1,5 +1,5 @@
 FROM iinfinity/alpine
-RUN apk add nginx
+RUN apk add nginx-mod-stream
 WORKDIR /app
 COPY ["./etc", "/etc"]
 COPY ["./app", "."]
