@@ -7,6 +7,7 @@ then
 fi
 
 cd alpine && sh build.sh $arch && \
+cd ../centos && sh build.sh $arch && \
 cd ../gcc && sh build.sh $arch && \
 cd ../java && sh build.sh $arch && \
 cd ../nginx && sh build.sh $arch && \

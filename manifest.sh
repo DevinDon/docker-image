@@ -1,4 +1,5 @@
 docker manifest create -a iinfinity/alpine iinfinity/alpine:$1
+docker manifest create -a iinfinity/centos iinfinity/centos:$1
 docker manifest create -a iinfinity/gcc iinfinity/gcc:$1
 docker manifest create -a iinfinity/java iinfinity/java:$1
 docker manifest create -a iinfinity/nginx iinfinity/nginx:$1
@@ -7,6 +8,7 @@ docker manifest create -a iinfinity/python iinfinity/python:$1
 docker manifest create -a iinfinity/rust iinfinity/rust:$1
 
 docker manifest push iinfinity/alpine
+docker manifest push iinfinity/centos
 docker manifest push iinfinity/gcc
 docker manifest push iinfinity/java
 docker manifest push iinfinity/nginx
