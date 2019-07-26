@@ -1,17 +1,17 @@
-docker manifest create -a iinfinity/alpine iinfinity/alpine:$1
-docker manifest create -a iinfinity/centos iinfinity/centos:$1
-docker manifest create -a iinfinity/gcc iinfinity/gcc:$1
-docker manifest create -a iinfinity/java iinfinity/java:$1
-docker manifest create -a iinfinity/nginx iinfinity/nginx:$1
-docker manifest create -a iinfinity/node iinfinity/node:$1
-docker manifest create -a iinfinity/python iinfinity/python:$1
-docker manifest create -a iinfinity/rust iinfinity/rust:$1
+docker manifest create iinfinity/alpine iinfinity/alpine:$1
+docker manifest create iinfinity/centos iinfinity/centos:$1
+docker manifest create iinfinity/gcc iinfinity/gcc:$1
+docker manifest create iinfinity/java iinfinity/java:$1
+docker manifest create iinfinity/nginx iinfinity/nginx:$1
+docker manifest create iinfinity/node iinfinity/node:$1
+docker manifest create iinfinity/python iinfinity/python:$1
+docker manifest create iinfinity/rust iinfinity/rust:$1
 
-docker manifest push iinfinity/alpine
-docker manifest push iinfinity/centos
-docker manifest push iinfinity/gcc
-docker manifest push iinfinity/java
-docker manifest push iinfinity/nginx
-docker manifest push iinfinity/node
-docker manifest push iinfinity/python
-docker manifest push iinfinity/rust
+docker manifest push --purge iinfinity/alpine:latest
+docker manifest push --purge iinfinity/centos:latest
+docker manifest push --purge iinfinity/gcc:latest
+docker manifest push --purge iinfinity/java:latest
+docker manifest push --purge iinfinity/nginx:latest
+docker manifest push --purge iinfinity/node:latest
+docker manifest push --purge iinfinity/python:latest
+docker manifest push --purge iinfinity/rust:latest
