@@ -1,6 +1,7 @@
 FROM iinfinity/alpine
 WORKDIR /app
 RUN apk add aria2
-RUN wget https://github.com/filebrowser/filebrowser/releases/download/v2.0.12/linux-amd64-filebrowser.tar.gz && tar -zxvf *
+RUN wget https://github.com/filebrowser/filebrowser/releases/download/v2.0.12/linux-amd64-filebrowser.tar.gz
+RUN tar -zxvf *
 WORKDIR /storage
 ENTRYPOINT [ "/app/filebrowser", "-r", "/storage" ]
