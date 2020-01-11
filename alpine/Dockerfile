@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM alpine
 COPY [ "./etc", "/etc" ]
 RUN apk update && apk upgrade
 RUN addgroup -S app && adduser app -D -G app
