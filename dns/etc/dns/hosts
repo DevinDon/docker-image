@@ -1,0 +1,6 @@
+192.168.0.254 rpi
+192.168.0.254 docker.rpi
+192.168.0.254 manager.rpi
+192.168.0.254 shell.rpi
+192.168.0.254 aria2.rpi
+192.168.0.254 storage.rpi
