@@ -12,6 +12,7 @@ cd ../aria2 && sh build.sh $arch && \
 cd ../centos && sh build.sh $arch && \
 cd ../gcc && sh build.sh $arch && \
 cd ../java && sh build.sh $arch && \
+cd ../minecraft && sh build.sh $arch && \
 cd ../node && sh build.sh $arch && \
 cd ../python && sh build.sh $arch && \
 cd ../rust && sh build.sh $arch && \
