@@ -18,7 +18,8 @@ cd ../minecraft && sh build.sh $arch && \
 cd ../node && sh build.sh $arch && \
 cd ../python && sh build.sh $arch && \
 cd ../rust && sh build.sh $arch && \
-cd ../storage && sh build.sh $arch
+cd ../storage && sh build.sh $arch && \
+cd ..
 
 # Push image
 
@@ -32,4 +33,5 @@ cd ../minecraft && sh push.sh $arch && \
 cd ../node && sh push.sh $arch && \
 cd ../python && sh push.sh $arch && \
 cd ../rust && sh push.sh $arch && \
-cd ../storage && sh push.sh $arch
+cd ../storage && sh push.sh $arch && \
+cd ..
