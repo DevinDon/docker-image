@@ -1,7 +1,7 @@
 platform=`uname -i`
 arch="arm64"
 
-if [ platform = "x86_64" ]
+if [ platform="x86_64" ]
 then
   arch="amd64"
 fi
