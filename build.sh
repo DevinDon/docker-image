@@ -1,5 +1,5 @@
 platform=`uname -i`
-arch="amd64"
+arch="arm64"
 
 if [ platform = "x86_64" ]
 then
