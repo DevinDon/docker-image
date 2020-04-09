@@ -1,0 +1,172 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: "0.0.0.0:7893"
+external-ui: dashboard
+secret: "raspberry"
+
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - "tls://dns.rubyfish.cn:853"
+  fallback:
+    - "tls://dns.google"
+    - "tls://1.1.1.1:853"
+    - "tcp://1.1.1.1:53"
+    - "tcp://208.67.222.222:443"
+
+Proxy:
+  - {
+      name: "新加坡ALI-21",
+      type: vmess,
+      server: 21.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 21.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-22",
+      type: vmess,
+      server: 22.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 22.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-23",
+      type: vmess,
+      server: 23.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 23.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-24",
+      type: vmess,
+      server: 24.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 24.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-25",
+      type: vmess,
+      server: 25.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 25.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-26",
+      type: vmess,
+      server: 26.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 26.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-27",
+      type: vmess,
+      server: 27.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 27.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-28",
+      type: vmess,
+      server: 28.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 28.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-29",
+      type: vmess,
+      server: 29.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 29.alibaba.zhileshu.com },
+    }
+  - {
+      name: "新加坡ALI-30",
+      type: vmess,
+      server: 30.grabrich.xyz,
+      port: 80,
+      uuid: 36A8C044-37B3-9EB9-11E4-3E39EE972076,
+      alterId: 0,
+      cipher: auto,
+      network: ws,
+      ws-path: /,
+      ws-headers: { Host: 30.alibaba.zhileshu.com },
+    }
+
+Proxy Group:
+  - {
+      name: 阿里巴巴 F,
+      type: select,
+      proxies:
+        [
+          "新加坡ALI-21",
+          "新加坡ALI-22",
+          "新加坡ALI-23",
+          "新加坡ALI-24",
+          "新加坡ALI-25",
+          "新加坡ALI-26",
+          "新加坡ALI-27",
+          "新加坡ALI-28",
+          "新加坡ALI-29",
+          "新加坡ALI-30",
+        ],
+    }
+
+Rule:
+  - DOMAIN-SUFFIX,google.com,阿里巴巴 F
+  - DOMAIN-KEYWORD,google,阿里巴巴 F
+  - DOMAIN,google.com,阿里巴巴 F
+  - DOMAIN-SUFFIX,ad.com,REJECT
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,阿里巴巴 F
