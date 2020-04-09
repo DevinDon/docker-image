@@ -1,1 +1,1 @@
-docker build -t docker.io/iinfinity/storage:$1 .
+docker build --build-arg arch=$1 -t docker.io/iinfinity/clash:$1 .
