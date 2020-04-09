@@ -27,3 +27,9 @@ docker run -d \
   --restart always \
   iinfinity/clash
 ```
+
+docker run \
+  -p 7890-7893:7890-7893 \
+  --name clash \
+  --restart always \
+  iinfinity/clash:arm64
