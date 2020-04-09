@@ -11,10 +11,19 @@ secret: "raspberry"
 dns:
   enable: true
   listen: 0.0.0.0:53
+  # hosts:
+  #   '*.pi': 192.168.0.254
+  #   "clash.r3.pi": 192.168.0.254
+  #   "docker.r3.pi": 192.168.0.254
+  #   "download.r3.pi": 192.168.0.254
+  #   "manager.r3.pi": 192.168.0.254
+  #   "media.r3.pi": 192.168.0.254
+  #   "shell.r3.pi": 192.168.0.254
   enhanced-mode: fake-ip
   # fake-ip-range: 198.18.0.1/16
   # enhanced-mode: redir-host
   nameserver:
+    - "tcp://127.0.0.1:8053"
     - "tls://dns.rubyfish.cn:853"
   fallback:
     - "tls://dns.google"
@@ -230,6 +239,9 @@ Proxy Group:
       - Domestic
 
 Rule:
+  # Raspberry Local Domain
+  - DOMAIN-SUFFIX,pi,DIRECT
+
   # Ads in Video apps
 
   # > iqiyi & pps
@@ -483,8 +495,6 @@ Rule:
   - DOMAIN-SUFFIX,union.6.cn,AdBlock
   - DOMAIN-SUFFIX,wa.gtimg.com,AdBlock
   - DOMAIN-SUFFIX,bfshan.cn,AdBlock
-
-
 
   # Ads in apps
   - DOMAIN-KEYWORD,admaster,AdBlock
@@ -8652,8 +8662,6 @@ Rule:
   - IP-CIDR,74.117.182.77/32,AdBlock
   - IP-CIDR,78.140.131.214/32,AdBlock
 
-
-
   # > Bilibili
   # - USER-AGENT,bili*,AsianTV
   # - USER-AGENT,Bilibili*,AsianTV
@@ -8688,8 +8696,6 @@ Rule:
 
   # > Youku
   - IP-CIDR,106.11.0.0/16,AsianTV
-
-
 
   # > ABC
   - DOMAIN-SUFFIX,edgedatg.com,GlobalTV
@@ -8880,8 +8886,6 @@ Rule:
   - DOMAIN-SUFFIX,gvt2.com,GlobalTV
   - DOMAIN-SUFFIX,youtu.be,GlobalTV
 
-
-
   # > Netflix
   # - USER-AGENT,Argo*,Netflix
   - DOMAIN,netflix.com.edgesuite.net,Netflix
@@ -8914,7 +8918,6 @@ Rule:
   - DOMAIN-SUFFIX,scdn.co,Spotify
   - DOMAIN-SUFFIX,spoti.fi,Spotify
 
-
   # > Telegram
   - DOMAIN-SUFFIX,t.me,Telegram
   - DOMAIN-SUFFIX,tdesktop.com,Telegram
@@ -8932,8 +8935,6 @@ Rule:
   - IP-CIDR6,2001:b28:f23d::/48,Telegram
   - IP-CIDR6,2001:b28:f23f::/48,Telegram
 
-
-
   # > Fast
   - DOMAIN-SUFFIX,fast.com,Speedtest
 
@@ -8941,15 +8942,11 @@ Rule:
   - DOMAIN-KEYWORD,speedtest,Speedtest
   - DOMAIN-SUFFIX,ooklaserver.net,Speedtest
 
-
-
   # > PayPal
   # - USER-AGENT,PayPal*,PayPal
   - DOMAIN-KEYWORD,paypal,PayPal
   - DOMAIN-SUFFIX,paypal.com,PayPal
   - DOMAIN-SUFFIX,paypalobjects.com,PayPal
-
-
 
   # > Microsoft
   # - USER-AGENT,OneDrive*,Microsoft
@@ -8971,8 +8968,6 @@ Rule:
   - DOMAIN-SUFFIX,windowsupdate.com,Microsoft
   - DOMAIN-SUFFIX,xbox.com,Microsoft
   - DOMAIN-SUFFIX,xboxlive.com,Microsoft
-
-
 
   # > Netease Music
   - DOMAIN,apm.music.163.com,Netease Music
@@ -8999,8 +8994,6 @@ Rule:
   - IP-CIDR,59.111.181.35/32,Netease Music
   - IP-CIDR,59.111.181.38/32,Netease Music
   - IP-CIDR,59.111.181.60/32,Netease Music
-
-
 
   # > Google
   - DOMAIN-KEYWORD,mtalk.google.com,DIRECT
@@ -9045,8 +9038,6 @@ Rule:
   # - URL-REGEX,(api|ps|sv|offnavi|newvector|ulog\.imap|newloc)(\.map|)\.(baidu|n\.shifen)\.com,DIRECT
   # - URL-REGEX,(.+\.|^)(360|so|qihoo|360safe|qhimg|360totalsecurity|yunpan)\.(cn|com),DIRECT
   # - URL-REGEX,(.+\.)?(torrent|announce\.php\?passkey=|tracker|BitTorrent|bt_key|ed2k|find_node|get_peers|info_hash|magnet:|peer_id=|sandai|Thunder|XLLiveUD|xunlei)(\..+)?,DIRECT
-
-
 
   # > Line
   - DOMAIN-SUFFIX,lin.ee,Proxy
@@ -9793,8 +9784,6 @@ Rule:
   - IP-CIDR,174.37.0.0/16,Proxy
   - IP-CIDR,208.43.0.0/16,Proxy
 
-
-
   # > Beplay
   - DOMAIN-KEYWORD,beplay,Domestic
 
@@ -10074,8 +10063,6 @@ Rule:
 
   # > CN
   - DOMAIN-SUFFIX,cn,Domestic
-
-
 
   # > Apple
   # - USER-AGENT,%E5%9C%B0%E5%9B%BE*,DIRECT
@@ -11059,8 +11046,6 @@ Rule:
   - IP-CIDR,63.92.224.0/19,Apple
   - IP-CIDR,63.92.224.0/20,Apple
   - IP-CIDR,65.199.22.0/23,Apple
-
-
 
   - IP-CIDR,10.0.0.0/8,DIRECT
   - IP-CIDR,100.64.0.0/10,DIRECT
