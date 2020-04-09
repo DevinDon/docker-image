@@ -1,6 +1,7 @@
-192.168.0.254 rpi
-192.168.0.254 docker.rpi
-192.168.0.254 manager.rpi
-192.168.0.254 shell.rpi
-192.168.0.254 aria2.rpi
-192.168.0.254 storage.rpi
+192.168.0.254 r3.pi
+192.168.0.254 clash.r3.pi
+192.168.0.254 docker.r3.pi
+192.168.0.254 download.r3.pi
+192.168.0.254 manager.r3.pi
+192.168.0.254 media.r3.pi
+192.168.0.254 shell.r3.pi
