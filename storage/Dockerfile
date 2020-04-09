@@ -2,5 +2,6 @@ FROM iinfinity/alpine
 ARG arch
 WORKDIR /app
 RUN mkdir /data
-RUN wget https://github.com/filebrowser/filebrowser/releases/download/v2.1.0/linux-${arch}-filebrowser.tar.gz && tar -zxvf linux-amd64-filebrowser.tar.gz
+RUN wget https://github.com/filebrowser/filebrowser/releases/download/v2.1.0/linux-${arch}-filebrowser.tar.gz \
+  && tar -zxvf *filebrowser.tar.gz
 ENTRYPOINT [ "/app/filebrowser", "-a", "0.0.0.0", "-p", "80", "-r", "/data" ]
