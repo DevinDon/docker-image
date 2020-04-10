@@ -3,10 +3,16 @@
 platform=`uname -i`
 arch="arm64"
 
-if [ platform="x86_64" ]
+if [ platform == "x86_64" ]
 then
   arch="amd64"
+else
+  arch="arm64"
 fi
+
+echo "Building image for $arch platform in 10 seconds..."
+
+sleep 10
 
 # Build & push image
 
