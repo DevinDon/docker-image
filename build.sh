@@ -1,13 +1,17 @@
 #!/bin/bash
 
-platform=`uname -i`
-arch="arm64"
+full=`uname -a`
 
-if [ platform == "x86_64" ]
+if [[ "$full" =~ .*aarch64.* ]]
+then
+  arch="arm64"
+elif [[ "$full" =~ .*x86_64.* ]]
 then
   arch="amd64"
 else
-  arch="arm64"
+  arch="unknown"
+  echo "Unknown platform, building failed."
+  exit 1
 fi
 
 echo "Building image for $arch platform in 10 seconds..."
