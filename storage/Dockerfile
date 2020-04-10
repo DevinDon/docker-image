@@ -4,4 +4,5 @@ WORKDIR /app
 RUN mkdir /data
 RUN wget https://github.com/filebrowser/filebrowser/releases/download/v2.1.0/linux-${arch}-filebrowser.tar.gz
 RUN tar -zxvf *.tar.gz && chmod +x /app/filebrowser
-ENTRYPOINT [ "/app/filebrowser", "-a", "0.0.0.0", "-p", "80", "-r", "/data" ]
+COPY config.json /app/config/config.json
+ENTRYPOINT [ "/app/filebrowser", "-c", "/app/config/config.json" ]
