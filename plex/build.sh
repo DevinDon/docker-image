@@ -15,4 +15,5 @@ docker build \
   --build-arg S6_OVERLAY_ARCH=$arch \
   --build-arg PLEX_BUILD=linux-$platform \
   -t docker.io/iinfinity/plex:$1 .
+docker tag docker.io/iinfinity/plex:$1 docker.io/iinfinity/plex:latest
 docker push docker.io/iinfinity/plex:$1
