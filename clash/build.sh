@@ -1,4 +1,4 @@
-if [ $1="arm64" ]
+if [ $1 == "arm64" ]
 then
   arch="armv8"
 fi
