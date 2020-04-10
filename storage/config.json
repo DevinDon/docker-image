@@ -4,5 +4,5 @@
   "address": "0.0.0.0",
   "log": "stdout",
   "database": "/config/database.db",
-  "root": "."
+  "root": "/data"
 }
