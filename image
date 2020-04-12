@@ -1,0 +1,46 @@
+#!/bin/bash
+full=`uname -a`
+
+if [[ "$full" =~ .*aarch64.* ]]
+then
+  arch="arm64"
+elif [[ "$full" =~ .*x86_64.* ]]
+then
+  arch="amd64"
+else
+  arch="unknown"
+  echo "Unknown platform, building failed."
+  exit 1
+fi
+
+echo "================================"
+echo "$full"
+echo "Platform: `uname`/$arch"
+echo "Build image in 10 seconds..."
+echo "================================"
+sleep 10
+
+images=("alpine" "aria2" "centos" "clash" "dns" "gcc" "java" "minecraft" "nginx" "node" "python" "rust")
+
+for image in ${images[@]};
+do
+  echo
+  echo "================================"
+  echo "       Building $image..."
+  docker build -t iinfinity/$image:$arch $image
+  docker tag iinfinity/$image:$arch iinfinity/$image:latest
+  docker push iinfinity/$image:$arch
+  rm -rf ~/.docker/manifests/*
+  docker manifest create iinfinity/$image \
+    iinfinity/$image:arm64 \
+    iinfinity/$image:amd64
+  docker manifest push --purge iinfinity/$image:latest
+  echo "   $image building completed."
+  echo "================================"
+  echo
+done
+
+echo "================================"
+echo "       Platform: $arch"
+echo "      Building completed."
+echo "================================"
