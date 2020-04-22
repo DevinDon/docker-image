@@ -13,14 +13,15 @@ else
   exit 1
 fi
 
+images=("alpine" "centos" "node" "python" "java" "rust" "gcc" "nginx" "dns" "clash" "aria2" "minecraft")
+
 echo "================================"
 echo "$full"
 echo "Platform: `uname`/$arch"
-echo "Build image in 10 seconds..."
+echo "Build images in 10 seconds..."
+echo ${images[*]}
 echo "================================"
 sleep 10
-
-images=("alpine" "centos" "node" "python" "java" "rust" "gcc" "nginx" "dns" "clash" "aria2" "minecraft")
 
 for image in ${images[@]};
 do
