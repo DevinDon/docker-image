@@ -1,7 +1,6 @@
 FROM iinfinity/alpine
 ARG arch
 WORKDIR /clash
-RUN if [ $arch == arm64 ]; then arch=armv8; fi
 RUN wget https://github.com/Dreamacro/clash/releases/download/v0.19.0/clash-linux-${arch}-v0.19.0.gz -O clash-${arch}.gz \
   && gzip *.gz -d && mv clash* clash && chmod +x clash
 WORKDIR /config

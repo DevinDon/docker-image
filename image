@@ -23,10 +23,9 @@ fi
 echo "================================"
 echo "$full"
 echo "Platform: `uname`/$arch"
-echo "Build images in 10 seconds..."
+echo "Building images:"
 echo ${images[*]}
 echo "================================"
-sleep 10
 
 for image in ${images[@]};
 do
