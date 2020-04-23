@@ -1,2 +1,2 @@
 FROM iinfinity/alpine
-RUN apk add gcc gdb libc-dev
+RUN apk add bash gdb gcc libc-dev make
