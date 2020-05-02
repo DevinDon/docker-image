@@ -1,5 +1,12 @@
 FROM alpine
 
+ENV WORKSPACE=/app
+
+RUN mkdir ${WORKSPACE} \
+  && addgroup user \
+  && adduser --disabled-password -s /bin/bash -G user user \
+  && chown user:user ${WORKSPACE}
+
 RUN apk update --no-cache && apk upgrade --no-cache
 
 # RUN apk add bash openssh-server
