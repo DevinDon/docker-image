@@ -32,9 +32,9 @@ do
   echo
   echo "================================"
   echo "       Building $image..."
-  cd $image \
-    && bash build.sh $arch $image \
-    && cd ..
+  cd $image; \
+     bash build.sh $arch $image; \
+     cd ..;
   echo "   $image building completed."
   echo "================================"
   echo
