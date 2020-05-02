@@ -1,8 +1,14 @@
 FROM iinfinity/alpine
-RUN apk add nginx-mod-stream
+
+RUN apk add --no-cache nginx-mod-stream inotify-tools
+
 WORKDIR /app
 COPY [ "./etc", "/etc" ]
 COPY [ "./app", "." ]
-# RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
-ENTRYPOINT [ "sh", "/etc/daemon.sh" ]
+
+COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 80 443
+
+ENTRYPOINT [ "/entrypoint.sh" ]
