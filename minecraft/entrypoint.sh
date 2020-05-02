@@ -29,5 +29,5 @@
 # Change USER
 su user
 
-# Enable clash
-java -Xmx2048M -Xms512M -jar server.jar nogui
+# Enable Minecraft
+exec java -Xmx2048M -Xms512M -jar server.jar nogui
