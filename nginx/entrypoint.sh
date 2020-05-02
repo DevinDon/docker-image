@@ -30,13 +30,10 @@
 # ln -sf /dev/stdout /var/log/nginx/access.log
 ln -sf /dev/stderr /var/log/nginx/error.log
 
-# Change USER
-su user
-
 # Enable Nginx
 nginx
 
-exec inotifywait -e modify,move,create,delete -mr --timefmt '%d/%m/%y %H:%M' --format '%T %f %e' \
+exec gosu user inotifywait -e modify,move,create,delete -mr --timefmt '%d/%m/%y %H:%M' --format '%T %f %e' \
 /etc/nginx/ | while read event; do
     echo "$event"
     nginx -s reload
