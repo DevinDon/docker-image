@@ -29,7 +29,7 @@
 # Create session
 mkdir -p /data/download
 touch /data/download/aria2.session
-chown -R user:user /data
+chown -R user:user /data/download
 
 # Change USER
 
