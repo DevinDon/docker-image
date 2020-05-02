@@ -26,8 +26,5 @@
 #     ;;
 # esac
 
-# Change USER
-su user
-
 # Enable clash
-exec /clash/clash -d /config
+exec gosu user /clash/clash -d /config
