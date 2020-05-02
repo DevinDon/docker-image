@@ -1,8 +1,8 @@
 FROM iinfinity/alpine
 
-RUN apk add --no-cache bash npm
-RUN npm config set unsafe-perm true
-RUN npm i -g npm
+RUN apk add --no-cache bash npm; \
+  npm config set unsafe-perm true; \
+  npm i -g npm;
 # RUN npm config set registry https://registry.npm.taobao.org
 
 WORKDIR ${WORKSPACE}
