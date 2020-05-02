@@ -32,7 +32,6 @@ touch /data/download/aria2.session
 chown -R user:user /data/download
 
 # Change USER
-
 su user
 
 # Enable aria2c
