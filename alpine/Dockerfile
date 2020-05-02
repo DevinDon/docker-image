@@ -2,12 +2,13 @@ FROM alpine
 
 ENV WORKSPACE=/app
 
-RUN mkdir ${WORKSPACE} \
-  && addgroup user \
-  && adduser --disabled-password -s /bin/sh -G user user \
-  && chown user:user ${WORKSPACE}
-
-RUN apk update --no-cache && apk upgrade --no-cache
+# Add User
+RUN mkdir ${WORKSPACE}; \
+  addgroup user; \
+  adduser --disabled-password -s /bin/sh -G user user; \
+  chown user:user ${WORKSPACE}; \
+  apk update --no-cache; \
+  apk upgrade --no-cache;
 
 # Install GOSU
 ENV GOSU_VERSION 1.12

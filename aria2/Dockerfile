@@ -1,6 +1,6 @@
 FROM iinfinity/alpine
 
-RUN apk add aria2 --no-cache
+RUN apk --no-cache add aria2
 
 COPY [ "./config", "/config" ]
 

@@ -1,2 +1,2 @@
 FROM iinfinity/alpine
-RUN apk add openjdk11 maven
+RUN apk add --no-cache openjdk11 maven
