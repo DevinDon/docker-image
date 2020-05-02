@@ -6,4 +6,9 @@ WORKDIR /app
 RUN wget ${DOWNLOAD} -O server.jar
 RUN echo "eula=true" > eula.txt
 
-ENTRYPOINT [ "java", "-Xmx2048M", "-Xms512M", "-jar", "server.jar", "nogui" ]
+COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
+RUN chmod +x /entrypoint.sh
+
+EXPOSE 25565
+
+ENTRYPOINT [ "/entrypoint.sh" ]
