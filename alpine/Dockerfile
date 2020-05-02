@@ -4,7 +4,7 @@ ENV WORKSPACE=/app
 
 RUN mkdir ${WORKSPACE} \
   && addgroup user \
-  && adduser --disabled-password -s /bin/bash -G user user \
+  && adduser --disabled-password -s /bin/sh -G user user \
   && chown user:user ${WORKSPACE}
 
 RUN apk update --no-cache && apk upgrade --no-cache
