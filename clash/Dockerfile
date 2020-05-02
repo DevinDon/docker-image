@@ -1,9 +1,9 @@
 FROM iinfinity/alpine
 
-ARG platform
+ARG PLATFORM
 
 WORKDIR /clash
-RUN wget https://github.com/Dreamacro/clash/releases/download/v0.19.0/clash-linux-${platform}-v0.19.0.gz -O clash-${platform}.gz \
+RUN wget https://github.com/Dreamacro/clash/releases/download/v0.19.0/clash-linux-${PLATFORM}-v0.19.0.gz -O clash-${PLATFORM}.gz \
   && gzip *.gz -d && mv clash* clash && chmod +x clash
 
 WORKDIR /config

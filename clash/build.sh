@@ -10,7 +10,7 @@ else
 fi
 
 # Build, tag & push image
-docker build --build-arg platform=$arch -t iinfinity/$image:$arch .
+docker build --build-arg PLATFORM=$platform -t iinfinity/$image:$arch .
 docker tag iinfinity/$image:$arch iinfinity/$image:latest
 docker push iinfinity/$image:$arch
 
