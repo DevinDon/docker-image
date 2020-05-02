@@ -17,7 +17,7 @@ if [ "$1" ]
 then
   images=("$1")
 else
-  images=("alpine" "centos" "node" "python" "java" "rust" "gcc" "nginx" "dns" "clash" "aria2" "minecraft")
+  images=("alpine" "centos" "node" "python" "java" "rust" "gcc" "nginx" "clash" "aria2" "minecraft")
 fi
 
 echo "================================"
