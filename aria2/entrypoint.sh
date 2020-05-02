@@ -31,8 +31,5 @@ mkdir -p /data/download
 touch /data/download/aria2.session
 chown -R user:user /data/download
 
-# Change USER
-su user
-
 # Enable aria2c
-exec aria2c --conf-path=/config/aria2.conf
+exec gosu user aria2c --conf-path=/config/aria2.conf
