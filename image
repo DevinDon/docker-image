@@ -32,14 +32,9 @@ do
   echo
   echo "================================"
   echo "       Building $image..."
-  docker build --build-arg arch=$arch -t iinfinity/$image:$arch $image
-  docker tag iinfinity/$image:$arch iinfinity/$image:latest
-  docker push iinfinity/$image:$arch
-  rm -rf ~/.docker/manifests/*
-  docker manifest create iinfinity/$image \
-    iinfinity/$image:arm64 \
-    iinfinity/$image:amd64
-  docker manifest push --purge iinfinity/$image:latest
+  cd $image \
+    && bash build.sh $arch $image \
+    && cd ..
   echo "   $image building completed."
   echo "================================"
   echo
