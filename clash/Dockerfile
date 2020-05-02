@@ -11,6 +11,8 @@ COPY [ "config", "/config" ]
 RUN wget https://raw.githubusercontent.com/wp-statistics/GeoLite2-Country/master/GeoLite2-Country.mmdb.gz -O mmdb.gz \
   && gzip *.gz -d && mv *mmdb Country.mmdb
 
+EXPOSE 7890 7891 7892 7893
+
 COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
 RUN chmod +x /entrypoint.sh
 
