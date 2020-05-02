@@ -1,14 +1,3 @@
-#!/usr/bin/env bash
-#=================================================================
-# https://github.com/P3TERX/aria2.conf
-# File name：delete.aria2.sh
-# Description: Delete .aria2 file after Aria2 download is complete
-# Lisence: MIT
-# Version: 2.0
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=================================================================
-
 DOWNLOAD_PATH='/downloads'
 
 FILE_PATH=$3

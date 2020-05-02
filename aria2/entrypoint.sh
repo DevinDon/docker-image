@@ -27,7 +27,13 @@
 # esac
 
 # Create session
+mkdir -p /data/download
 touch /data/download/aria2.session
+chown -R user:user /data
+
+# Change USER
+
+su user
 
 # Enable aria2c
 exec aria2c --conf-path=/config/aria2.conf
