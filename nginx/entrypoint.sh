@@ -36,5 +36,6 @@ nginx
 exec gosu user inotifywait -e modify,move,create,delete -mr --timefmt '%d/%m/%y %H:%M' --format '%T %f %e' \
 /etc/nginx/ | while read event; do
     echo "$event"
+    sleep 1
     nginx -s reload
 done
