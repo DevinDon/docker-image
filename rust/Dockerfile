@@ -1,2 +1,2 @@
 FROM iinfinity/alpine
-RUN apk add cargo rust
+RUN apk add --no-cache cargo rust
