@@ -6,12 +6,12 @@ Docker image, inculde:
 - Aria2
 - CentOS
 - Clash
-- DNS
 - GCC
-- Java / JDK
+- Java
 - Minecraft
 - Nginx
 - Node
 - Python
 - Rust
-- Storage (File Browser)
+
+See each folder for more detail.
