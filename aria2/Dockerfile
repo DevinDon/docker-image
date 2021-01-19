@@ -4,10 +4,10 @@ RUN apk --no-cache add aria2
 
 COPY [ "./config", "/config" ]
 
-EXPOSE 6800 6801
+RUN mkdir -p /data \
+  && touch /data/aria2.session
 
 COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
 RUN chmod +x /entrypoint.sh
-RUN touch /data/aria2.session
 
 ENTRYPOINT [ "/entrypoint.sh" ]
