@@ -8,4 +8,4 @@ ln -sf /dev/stderr /var/log/nginx/error.log
 # start nginx
 nginx && echo 'nginx started'
 
-exec su-exec runner /notify.sh
+exec /notify.sh
