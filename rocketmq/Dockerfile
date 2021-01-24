@@ -16,4 +16,3 @@ RUN sed -i "s/^sh/bash/g" /usr/local/rocketmq/bin/runserver.sh \
   && sed -i "s/^sh/bash/g" /usr/local/rocketmq/bin/mqbroker
 
 ENTRYPOINT [ "bash", "-c" ]
-
