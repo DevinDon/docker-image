@@ -1,13 +1,14 @@
 FROM iinfinity/alpine
 
+WORKDIR ${WORKSPACE}
+
 RUN apk add --no-cache nginx-mod-stream inotify-tools
 
-WORKDIR /app
 COPY [ "./etc", "/etc" ]
-COPY [ "./app", "." ]
+COPY [ "./app", "/app" ]
 
 COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
-RUN chmod +x /entrypoint.sh
+COPY [ "./notify.sh", "/notify.sh" ]
 
 EXPOSE 80 443
 
