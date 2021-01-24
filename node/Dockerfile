@@ -1,15 +1,12 @@
 FROM iinfinity/alpine
 
-RUN apk add --no-cache bash npm; \
-  npm config set unsafe-perm true; \
-  npm i -g npm;
-# RUN npm config set registry https://registry.npm.taobao.org
-
 WORKDIR ${WORKSPACE}
 
-COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
-RUN chmod +x /entrypoint.sh
+ENV NPM_CONFIG_REGISTRY=https://registry.npm.taobao.org
 
-EXPOSE 8080
+RUN apk add --no-cache npm; \
+  npm i -g npm@latest;
+
+COPY [ "./entrypoint.sh", "/entrypoint.sh" ]
 
 ENTRYPOINT [ "/entrypoint.sh" ]
