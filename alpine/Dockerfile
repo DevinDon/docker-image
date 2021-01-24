@@ -1,6 +1,7 @@
 FROM alpine:3.13
 
 ENV WORKSPACE=/app
+WORKDIR ${WORKSPACE}
 
 # change mirror
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories; \
@@ -8,7 +9,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
   apk upgrade --no-cache;
 
 # add user runner
-RUN mkdir ${WORKSPACE}; \
+RUN mkdir -p ${WORKSPACE}; \
   adduser runner --disabled-password -s /bin/sh -u 1000; \
   chown runner:runner ${WORKSPACE};
 
