@@ -2,7 +2,10 @@ FROM iinfinity/alpine
 
 WORKDIR ${WORKSPACE}
 
-RUN apk add --no-cache nginx-mod-stream inotify-tools
+RUN apk add --no-cache \
+  nginx-mod-stream \
+  nginx-mod-http-headers-more \
+  inotify-tools
 
 COPY [ "./etc", "/etc" ]
 COPY [ "./app", "/app" ]
